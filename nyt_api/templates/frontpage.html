@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>hello</h1>
+{{ check }}
+
+<!-- Signing a user up -->
+<h2>Sign up here</h2>
+<form action="." method="post">
+
+    {% csrf_token %}
+
+    {{ signupform.as_p }}
+
+    <input type="submit" value="Sign Up" name="signupform">
+
+</form>
+
+
+<!-- Signing a user in -->
+<h2>Already a user - Sign in here!</h2>
+<form action="." method="post">
+
+    {% csrf_token %}
+
+    {{ signinform.as_p }}
+
+    <input type="submit" value="Sign In" name="signinform">
+
+</form>
+
+{% endblock content %}
